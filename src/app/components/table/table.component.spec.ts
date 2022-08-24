@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SearchDescriptionPipe } from '../pipes/search-description.pipe';
+import { SearchDescriptionPipe } from '../../pipes/search-description.pipe';
 
 import { TableComponent } from './table.component';
 

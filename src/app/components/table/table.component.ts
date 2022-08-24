@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AssignedToResponseInterface } from '../models/assigned-to-response.interface';
-import { OrderInterface } from '../models/order.interface';
-import { OrderResponseInterface } from './../models/order-response.interface';
+import { AssignedToResponseInterface } from '../../models/assigned-to-response.interface';
+import { OrderInterface } from '../../models/order.interface';
+import { OrderResponseInterface } from '../../models/order-response.interface';
 
 @Component({
   selector: 'app-table',
