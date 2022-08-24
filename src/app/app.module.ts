@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { TableComponent } from './components/table/table.component';
 import { SearchDescriptionPipe } from './pipes/search-description.pipe';
+import { MainComponent } from './components/main/main.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { SearchDescriptionPipe } from './pipes/search-description.pipe';
     TableComponent,
     SearchDescriptionPipe,
     SearchInputComponent,
+    MainComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

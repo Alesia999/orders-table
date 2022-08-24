@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AssignedToResponseInterface } from '../../models/assigned-to-response.interface';
 import { OrderInterface } from '../../models/order.interface';
 import { OrderResponseInterface } from '../../models/order-response.interface';
@@ -11,7 +11,7 @@ import { OrderResponseInterface } from '../../models/order-response.interface';
 export class TableComponent implements OnInit {
   private readonly dataURL = './assets/data/orders.json';
   orders!: OrderInterface[];
-  searchString: string = '';
+  @Input() searchString!: string;
   readonly tableColumns: string[] = [
     'WO ID',
     'Description',
@@ -48,9 +48,5 @@ export class TableComponent implements OnInit {
           })
         );
       });
-  }
-
-  search(value: string) {
-    this.searchString = value;
   }
 }
