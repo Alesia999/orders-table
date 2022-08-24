@@ -49,4 +49,8 @@ export class TableComponent implements OnInit {
         );
       });
   }
+
+  search(value: string) {
+    this.searchString = value;
+  }
 }

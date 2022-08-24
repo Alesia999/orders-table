@@ -1,8 +1,4 @@
-<input
-  type="text"
-  [(ngModel)]="searchString"
-  placeholder="Search by description"
-/>
+<app-search-input (onSearch)="search($event)"></app-search-input>
 <table>
   <tr>
     <th *ngFor="let column of tableColumns">{{ column }}</th>
