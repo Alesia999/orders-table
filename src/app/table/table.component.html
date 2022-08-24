@@ -14,7 +14,7 @@
       <th>Status</th>
       <th>Priority</th>
     </tr>
-    <tr *ngFor="let order of orders">
+    <tr *ngFor="let order of orders | searchDescription: searchString">
       <td>{{ order.id }}</td>
       <td>{{ order.description }}</td>
       <td>{{ order.receivedDate | date: "HH:mm:ss, MMMM d, y" }}</td>
