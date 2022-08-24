@@ -11,7 +11,23 @@ import { OrderResponseInterface } from './../models/order-response.interface';
 export class TableComponent implements OnInit {
   private readonly dataURL = './assets/data/orders.json';
   orders!: OrderInterface[];
-  searchString = '';
+  searchString: string = '';
+  readonly tableColumns: string[] = [
+    'WO ID',
+    'Description',
+    'Received date',
+    'Assigned to',
+    'Status',
+    'Priority',
+  ];
+  readonly orderProperties: string[] = [
+    'id',
+    'description',
+    'receivedDate',
+    'assignedTo',
+    'status',
+    'priority',
+  ];
 
   ngOnInit() {
     fetch(this.dataURL)

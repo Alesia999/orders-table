@@ -5,19 +5,9 @@
 />
 <table>
   <tr>
-    <th>WO ID</th>
-    <th>Description</th>
-    <th>Received date</th>
-    <th>Assigned to</th>
-    <th>Status</th>
-    <th>Priority</th>
+    <th *ngFor="let column of tableColumns">{{ column }}</th>
   </tr>
   <tr *ngFor="let order of orders | searchDescription: searchString">
-    <td>{{ order.id }}</td>
-    <td>{{ order.description }}</td>
-    <td>{{ order.receivedDate | date: "HH:mm:ss, MMMM d, y" }}</td>
-    <td>{{ order.assignedTo }}</td>
-    <td>{{ order.status }}</td>
-    <td>{{ order.priority }}</td>
+    <td *ngFor="let orderProp of orderProperties">{{ order[orderProp] }}</td>
   </tr>
 </table>
