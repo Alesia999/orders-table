@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AssignedToResponseInterface } from '../models/assigned-to-response.interface';
+import { OrderInterface } from '../models/order.interface';
+import { OrderResponseInterface } from './../models/order-response.interface';
 
 @Component({
   selector: 'app-table',
@@ -7,13 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
   private readonly dataURL = './assets/data/orders.json';
-  orders = [];
+  orders!: OrderInterface[];
+  searchString = '';
 
-  ngOnInit(): void {
+  ngOnInit() {
     fetch(this.dataURL)
       .then((res) => res.json())
       .then((json) => {
-        this.orders = json.response.data;
+        this.orders = json.response.data.map(
+          (order: OrderResponseInterface) => ({
+            id: order.work_order_id,
+            description: order.description,
+            receivedDate: order.received_date,
+            assignedTo: order.assigned_to.map(
+              (person: AssignedToResponseInterface) => {
+                return `${person.person_name} (${person.status})`;
+              }
+            ),
+            status: order.status,
+            priority: order.priority,
+          })
+        );
       });
   }
 }
