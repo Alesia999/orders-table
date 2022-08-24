@@ -1,0 +1,37 @@
+.wrapper {
+ margin: 30px;
+}
+
+table {
+ font-family: arial, sans-serif;
+ border-collapse: collapse;
+ width: 100%;
+
+ th {
+  background-color: yellow;
+  border: 1px solid yellow;
+ }
+
+ td {
+  border: 1px solid #dddddd;
+ }
+
+ td,
+ th {
+  text-align: left;
+  padding: 8px;
+ }
+
+ tr:nth-child(even) {
+  background-color: #dddddd;
+ }
+}
+
+input {
+ width: 100%;
+ border: 3px solid yellowgreen;
+ padding: 5px;
+ height: 20px;
+ border-radius: 5px;
+ outline: none;
+}

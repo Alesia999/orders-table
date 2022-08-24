@@ -33,4 +33,10 @@ export class TableComponent implements OnInit {
         );
       });
   }
+
+  search(value: string): void {
+    this.orders = this.orders.filter((val) =>
+      val.description.toLowerCase().includes(value.toLowerCase())
+    );
+  }
 }
