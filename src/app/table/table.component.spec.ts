@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SearchDescriptionPipe } from '../pipes/search-description.pipe';
 
 import { TableComponent } from './table.component';
 
@@ -8,7 +9,7 @@ describe('TableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TableComponent ]
+      declarations: [ TableComponent, SearchDescriptionPipe ]
     })
     .compileComponents();
   });
