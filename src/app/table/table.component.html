@@ -1,26 +1,23 @@
-<div class="wrapper">
-  <input
-    type="text"
-    [(ngModel)]="searchString"
-    placeholder="Search by description"
-  />
-  <h2>Orders Table</h2>
-  <table>
-    <tr>
-      <th>WO ID</th>
-      <th>Description</th>
-      <th>Received date</th>
-      <th>Assigned to</th>
-      <th>Status</th>
-      <th>Priority</th>
-    </tr>
-    <tr *ngFor="let order of orders | searchDescription: searchString">
-      <td>{{ order.id }}</td>
-      <td>{{ order.description }}</td>
-      <td>{{ order.receivedDate | date: "HH:mm:ss, MMMM d, y" }}</td>
-      <td>{{ order.assignedTo }}</td>
-      <td>{{ order.status }}</td>
-      <td>{{ order.priority }}</td>
-    </tr>
-  </table>
-</div>
+<input
+  type="text"
+  [(ngModel)]="searchString"
+  placeholder="Search by description"
+/>
+<table>
+  <tr>
+    <th>WO ID</th>
+    <th>Description</th>
+    <th>Received date</th>
+    <th>Assigned to</th>
+    <th>Status</th>
+    <th>Priority</th>
+  </tr>
+  <tr *ngFor="let order of orders | searchDescription: searchString">
+    <td>{{ order.id }}</td>
+    <td>{{ order.description }}</td>
+    <td>{{ order.receivedDate | date: "HH:mm:ss, MMMM d, y" }}</td>
+    <td>{{ order.assignedTo }}</td>
+    <td>{{ order.status }}</td>
+    <td>{{ order.priority }}</td>
+  </tr>
+</table>
